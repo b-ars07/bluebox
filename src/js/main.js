@@ -1,3 +1,2 @@
-@@include('../../frontend/bower_components/jquery/dist/jquery.min.js')
+@@include('lib/lib.js')
 
-@@include('partials/app.js')
