@@ -1,10 +1,99 @@
+@import '../mixins';
+@import '../variables';
+
 .header {
-    a {
-        outline: none;
-        text-decoration: none;
-        color: red;
+   width: 100%;
+   @include clearfix();
+    height: 120px;
+    
+    .logo {
+        display: inline-flex;
+        align-items: center;
+        
+        &__img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+        
+        &__text {
+            display: inline-block;
+            vertical-align: middle;
+            text-transform: uppercase;
+            color: $logo-color;
+            font-size: 35px;
+            font-weight: bold;
+        }
     }
-    p {
-        color: red;
+    
+    .nav {
+        display: inline-flex;
+        align-items: center;
+        padding-left: 0px;
+    }
+}
+
+.nav-item {
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "|";
+        top: 7px;
+        right: 0px;
+    }
+    
+    &:last-child:after {
+        content: '';
+    }
+}
+
+.navbar-toggleable-sm {
+    .navbar-nav {
+        .nav-link {
+            padding-right: 1.3rem;
+            padding-left: 1.3rem;
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+            
+            &:hover,
+            &:focus {
+              color: $active-link;    
+            }
+        }
+        
+        .active-link {
+            color: $active-link;
+        }
+    }
+} 
+
+.search {
+    display: inline-flex;
+    align-items: center;
+    
+    .form-search {
+        position: relative;
+        
+        &__input {
+            border: none;    
+            width: 130px;
+            height: 30px;
+            background-color: #f1f3f6;
+            color: #a3a3a3;
+            font-size: 13px;
+            padding-left: 8px;
+            font-style: italic;
+        }
+        
+        &:after {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 25px;
+            top: 3%;
+            right: 3%;
+            background: url('../../img/search-icon.svg') no-repeat;
+        }
     }
 }
