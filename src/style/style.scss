@@ -4,6 +4,9 @@
 
 //block
 @import 'block/_header';
+@import 'block/_slider';
+@import 'block/_promo';
+@import 'block/_portfolio';
 @import 'block/_footer';
 
 //mixins
@@ -16,9 +19,21 @@
 @import 'variables';
 
 //custom
-body {
-    background: #fff;
+body,
+html {
+    padding: 0;
+    margin: 0;
     height: 100%;
+    background: #fff;
+}
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
     font-family: "PTSans";
     font-size: 14px;
     
@@ -26,16 +41,40 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+ul, li {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    
+}
+
 .page-wrap {
     min-height: 100%;
     margin-bottom: -($footer-height);
     width: 100%;
-    max-width: 1232px;
-    margin: 0 auto;
-    
+        
     &:after {
       content: "";
       display: block;
       height: $footer-height;
     }
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1232px;
+    margin: 0 auto;
 }

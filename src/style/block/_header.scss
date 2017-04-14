@@ -35,15 +35,22 @@
 
 .nav-item {
     position: relative;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    
     &:after {
         position: absolute;
         content: "|";
-        top: 7px;
+        top: 42px;
         right: 0px;
     }
     
     &:last-child:after {
         content: '';
+    }
+    
+    &:hover .submenu {
+        display: block;
     }
 }
 
@@ -52,18 +59,23 @@
         .nav-link {
             padding-right: 1.3rem;
             padding-left: 1.3rem;
+            padding-bottom: 0px;
             font-size: 15px;
             font-weight: 400;
             text-transform: uppercase;
+            transition: color .3s ease-in-out;
+            
             
             &:hover,
             &:focus {
-              color: $active-link;    
+              color: $blue;    
             }
+            
+            
         }
         
         .active-link {
-            color: $active-link;
+            color: $blue;
         }
     }
 } 
@@ -94,6 +106,32 @@
             top: 3%;
             right: 3%;
             background: url('../../img/search-icon.svg') no-repeat;
+        }
+    }
+}
+
+.submenu {
+    position: absolute;
+    display: none;
+    background: url('../../img/nav-drop-down.svg');
+    width: 221px;
+    top: 94px;
+    left: -28px;
+    padding-top: 16px;
+    z-index: 10;
+    
+    .submenu-item {
+        display: block;
+        
+        .submenu-link {
+            display: block;
+            padding: 10px 0 10px 20px;
+            color: #31333e;
+            
+            &_active, &:hover {
+                background: $blue;
+                color: $white;
+            }
         }
     }
 }

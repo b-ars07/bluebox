@@ -1,0 +1,75 @@
+@import '../mixins';
+
+.portfolio {
+    @include clearfix();
+    padding-top: 55px;
+    padding-bottom: 99px;
+    
+    background: $grey;
+    
+    &__title {
+        font-size: 30px;
+        font-weight: 400;
+        color: $title-color;
+        margin-bottom: 30px;
+        display: block;
+    }
+    
+    &__item {
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        
+         &:before {
+            display: block;
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 40px;
+            background: url('../../img/view-icon.png') no-repeat;
+            z-index: 1;
+        }
+        
+        &:after {
+            display: block;
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 70px;
+            height: 40px;
+            background: url('../../img/share_link-icon.png') no-repeat;
+            z-index: 1;
+        }
+    }
+    
+    &__img {
+        width: 100%;
+        position: relative;
+    }
+    &__info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 15px;
+        padding-left: 25px;
+        
+       
+    }
+    
+    &__subtitle {
+        color:  $white;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    &__text {
+        color: $white;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+}
