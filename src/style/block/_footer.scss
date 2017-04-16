@@ -1,6 +1,9 @@
 //variables
 @import '../variables';
+@import '../mixins';
 
 .footer {
-  height: $footer-height; 
+    @include clearfix();
+    height: $footer-height;
+    background: $logo-color;
 }
