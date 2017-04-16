@@ -1,9 +1,57 @@
 //variables
 @import '../variables';
 @import '../mixins';
-
 .footer {
     @include clearfix();
-    height: $footer-height;
+    min-height: $footer-height;
     background: $logo-color;
+    .footer-menu {
+        padding-top: 45px;
+        &__item {
+            position: relative;
+            padding-right: 1.3rem;
+            padding-left: 1.3rem;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:after {
+                position: absolute;
+                content: "|";
+                color: $grey;
+                top: 0px;
+                right: 0px;
+            }
+            &:last-child:after {
+                content: '';
+            }
+        }
+        &__link {
+            color: $grey;
+            font-weight: 400;
+            line-height: 24px;
+            font-size: 15px;
+            &:hover {
+                color: darken($grey, 20%);
+            }
+        }
+    }
+    .copyright {
+        color: $grey;
+        font-weight: 400;
+        line-height: 24px;
+        &__text {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+        &__subtext {
+            font-size: 12px;
+        }
+    }
+    .social {
+        padding-top: 45px;
+        &__link {
+            margin-right: 10px;
+        }
+    }
 }

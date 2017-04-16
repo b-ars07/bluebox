@@ -1,6 +1,6 @@
 @@include('lib/lib.js')
 $(document).ready(function () {
-    
+
 
     //делаем ссылку меню активной при нажатии
     $('nav-item>a').on('click', function (evt) {
@@ -17,20 +17,58 @@ $(document).ready(function () {
         $(this).addClass('submenu-link_active');
     });
 
-    var swiper1 = new Swiper('.main-slider', {
-        // Navigation arrows
-        nextButton: '.main-slider .swiper-button-next',
-        prevButton: '.main-slider .swiper-button-prev',
-        loop: true,
-
-    });
 
     $('.fancybox').fancybox();
+
+    var owl = $(".main-slider");
+    var owl2 = $(".clients-slider");
     
-     var swiper2 = new Swiper('.clients-slider', {
-        nextButton: '.clients-slider .swiper-button-next',
-        prevButton: '.clients-slider .swiper-button-prev',
-        slidesPerView: 4,
+    owl.owlCarousel({
+        loop: true,
+        items: 1,
+        dots: false,
+    });
+    owl2.owlCarousel({
+        loop: true,
+        items: 4,
+        dots: false,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            500:{
+                items:2,
+            },
+            700:{
+                items:3,
+            },
+            900: {
+                items: 4,
+            }
+        }
     });
     
+    //custom navigation owl
+    $('.slider .arrow-prev').on('click', function (evt) {
+        evt.preventDefault();
+        
+        owl.trigger('prev.owl.carousel');
+    });
+    $('.slider .arrow-next').on('click', function (evt) {
+        evt.preventDefault();
+        
+        owl.trigger('next.owl.carousel');
+    });
+    
+    $('.clients .arrow-prev').on('click', function (evt) {
+        evt.preventDefault();
+        
+        owl2.trigger('prev.owl.carousel');
+    });
+    $('.clients .arrow-next').on('click', function (evt) {
+        evt.preventDefault();
+        
+        owl2.trigger('next.owl.carousel');
+    });
 });

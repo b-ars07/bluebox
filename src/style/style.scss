@@ -36,10 +36,11 @@ html {
 }
 html {
     font-family: "PTSans";
-    font-size: 14px;
+    font-size: 100%;
     
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
+    
 }
 
 ul, li {
@@ -52,6 +53,15 @@ a {
     &:active,
     &:focus {
         text-decoration: none;
+        outline: none;
+    }
+    
+}
+
+button {
+    &:hover,
+    &:focus {
+        outline: none;
     }
     
 }
@@ -78,4 +88,45 @@ img {
     width: 100%;
     max-width: 1232px;
     margin: 0 auto;
+}
+
+.owl-carousel {
+    position: relative;
+}
+
+.arrow-prev {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    right: auto;
+    background: url('../img/slider/left-arrow.svg') no-repeat;
+    opacity: 0.5;
+    width: 30px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow-next {
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 3%;;
+    background: url('../img/slider/right-arrow.svg') no-repeat;
+    opacity: 0.5;
+    width: 30px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow-prev:hover,
+.arrow-next:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.owl-stage {
+    display: flex!important;
+    align-items: center!important;
 }

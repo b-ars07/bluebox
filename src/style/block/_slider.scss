@@ -2,57 +2,54 @@
 
 .slider {
     @include clearfix();
+    position: relative;
     
     background: url('../../img/slider/bg.png');
     height: 550px;
     margin-bottom: 100px;
 }
 
-.swiper-container {
-    overflow: visible;
-}
 
-.swiper-container {
-    width: 100%;
-    height: 100%;
-    
-    .swiper-slide {
-        .swiper-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 48px;
+    .swiper-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 48px;
+        flex-wrap: wrap;
+
+        &__text {
+            color: $white;
+            font-size: 3vw;
+            font-weight: 400;
             
-            &__text {
-                display: inline-flex;
-                color: $white;
-                font-size: 3rem;
-                font-weight: 400;
-            }
-
-            &__button {
-                display: inline-flex;
-
-                .btn-slide {
-                    cursor: pointer;
-                    width: 220px;
-                    border-radius: 4px;
-                    background-color: $blue;
-                    font-size: 22px;
-                    font-weight: 400;
-                    padding: 15px 0 18px 0;
-                    border: none;
-
-                     &:hover,
-                     &:focus,
-                     &:active {
-                        background-color: darken($blue, 10%); 
-                        outline: none;
-                     }
-                }
+             @media screen and (max-width: 668px) {
+                font-size: 5vw;
             }
         }
-        
+
+        &__button {
+
+            .btn-slide {
+                cursor: pointer;
+                width: 90%;
+                border-radius: 4px;
+                background-color: $blue;
+                font-size: 1.9vw;
+                font-weight: 400;
+                padding: 15px 0 18px 0;
+                border: none;
+
+                 &:hover,
+                 &:focus,
+                 &:active {
+                    background-color: darken($blue, 10%); 
+                    outline: none;
+                 }
+                
+                 @media screen and (max-width: 668px) {
+                     font-size: 4vw;
+                 }
+            }
+        }
     }
-    
-    
-}
+
+
