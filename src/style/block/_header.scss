@@ -21,8 +21,9 @@
             vertical-align: middle;
             text-transform: uppercase;
             color: $logo-color;
-            font-size: 35px;
+            font-size: 2vw;
             font-weight: bold;
+            
         }
     }
     
@@ -83,6 +84,10 @@
 .search {
     display: inline-flex;
     align-items: center;
+    padding-left: 0;
+    @media screen and (max-width: 798px) {
+        display: none;
+    }
     
     .form-search {
         position: relative;
